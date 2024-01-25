@@ -68,22 +68,11 @@
     height: 6rem;
   }
 
-  /* .hover-effect:hover .bengaluru_svg__dynamic-shade-fill {
-    fill: orange;
-    color: orange;
-  } */
-
   .hover-container:hover .hover-effect img {
     transform-origin: center bottom;
     transform: scale(1.2);
     transition: transform 0.5s ease-in-out;
   }
-
-  /* .hover-container:hover .hover-effect svg {
-    transform-origin: center bottom;
-    transform: scale(1.2);
-    transition: transform 0.5s ease-in-out;
-  } */
 
   .svg-container {
     filter: grayscale(100%);
