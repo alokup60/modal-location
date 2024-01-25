@@ -1,38 +1,69 @@
+import { v4 as uuidv4 } from "uuid";
+
 export let cities = {
   mumbai: {
+    id: uuidv4(),
     cityName: "Mumbai",
-    svg: "svgs/Mumbai.svg",
+    svg: "svg/mumb.svg",
   },
   delhi: {
+    id: uuidv4(),
     cityName: "New Delhi",
-    svg: "svgs/delhi.svg",
+    svg: "svg/del.svg",
   },
   noida: {
+    id: uuidv4(),
     cityName: "Noida",
-    svg: "svgs/noida.svg",
+    svg: "svg/noida.svg",
   },
   gNoida: {
+    id: uuidv4(),
     cityName: "Greater Noida",
-    svg: "svgs/greaterNodia.svg",
+    svg: "svg/gNoida.svg",
   },
   faridabad: {
+    id: uuidv4(),
     cityName: "Faridabad",
-    svg: "svgs/faridabad.svg",
+    svg: "svg/farida.svg",
   },
   gurgaon: {
+    id: uuidv4(),
     cityName: "Gurgaon",
-    svg: "svgs/gurgaon.svg",
+    svg: "svg/gurg.svg",
   },
   banglore: {
+    id: uuidv4(),
     cityName: "Banglore",
-    svg: "/svgs/Banglore.svg",
+    svg: "/svg/bang.svg",
   },
-  Jaipur: {
+  jaipur: {
+    id: uuidv4(),
     cityName: "Jaipur",
     svg: ``,
   },
-  Chandigarh: {
+  chandigarh: {
+    id: uuidv4(),
     cityName: "Chandigarh",
+    svg: ``,
+  },
+  lucknow: {
+    id: uuidv4(),
+    cityName: "Lucknow",
+    svg: ``,
+  },
+  ghaziabad: {
+    id: uuidv4(),
+    cityName: "Ghaziabad",
+    svg: ``,
+  },
+  pune: {
+    id: uuidv4(),
+    cityName: "Pune",
+    svg: ``,
+  },
+  dehradun: {
+    id: uuidv4(),
+    cityName: "Dehradun",
     svg: ``,
   },
 };
