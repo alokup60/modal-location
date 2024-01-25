@@ -21,7 +21,7 @@
   }
 </script>
 
-<section>
+<!-- <section>
   <div
     class="flex mx-auto h-[20rem] w-11/12 overflow-x-hidden relative rounded-md mt-6"
   >
@@ -29,16 +29,46 @@
       style="background: linear-gradient(to right, #f4f8ff 0%, #f4f8ff 50%, #fff0 50%, #fff0 100%); filter:blur(10px)"
       class="absolute w-[6%] h-full left-0 z-50"
     ></div>
-    {#each allCities as { id, cityName, svg }, index (id)}
-      <div
-        class="flex flex-col justify-center w-8/12 items-center cursor-pointer mx-auto hover-container hover-effect companiesList"
-      >
-        <img src={svg} alt={cityName} class="svg-container" />
+    <div class="animation-container flex">
+      {#each allCities as { id, cityName, svg }, index (id)}
+        <div
+          class="flex flex-col justify-center w-8/12 items-center cursor-pointer hover-container hover-effect companiesList"
+        >
+          <img src={svg} alt={cityName} class="svg-container" />
+          <p class="font-semibold tracking-wider">{cityName}</p>
+        </div>
+      {/each}
+    </div>
 
-        <p class="font-semibold tracking-wider">{cityName}</p>
+    <div
+      style="background: linear-gradient(to left, #f4f8ff 0%, #f4f8ff 50%, #fff0 50%, #fff0 100%); filter:blur(10px)"
+      class="absolute w-[6%] h-full right-0 z-10"
+    ></div>
+  </div>
+</section> -->
+
+<section>
+  <div
+    class="flex mx-auto h-[10rem] w-11/12 overflow-x-hidden relative rounded-md mt-6"
+  >
+    <div
+      style="background: linear-gradient(to right, #f4f8ff 0%, #f4f8ff 50%, #fff0 50%, #fff0 100%); filter:blur(10px)"
+      class="absolute w-[6%] h-full left-0 z-50"
+    ></div>
+    <marquee direction="right" class="flex">
+      <div class="flex justify-center items-center mx-auto">
+        {#each allCities as { id, cityName, svg }, index (id)}
+          <div
+            class="flex flex-col justify-center w-8/12 items-center cursor-pointer hover-container hover-effect"
+          >
+            <img src={svg} alt={cityName} class="svg-container" />
+            <p class="font-semibold tracking-wider">{cityName}</p>
+          </div>
+        {/each}
       </div>
-      <br />
-    {/each}
+    </marquee>
+    <!-- <div class="animation-container flex"></div> -->
+
     <div
       style="background: linear-gradient(to left, #f4f8ff 0%, #f4f8ff 50%, #fff0 50%, #fff0 100%); filter:blur(10px)"
       class="absolute w-[6%] h-full right-0 z-10"
@@ -61,17 +91,26 @@
     color: green;
   }
 
-  .companiesList {
-    animation: 10s infinite linear moveCompany;
-    /* animation-direction: alternate; */
+  .animation-container {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: 10s linear infinite moveCompany;
   }
 
-  @keyframes moveCompany {
-    from {
-      transform: translateX(-100px);
+  .companiesList {
+    /* animation: 10s infinite linear moveCompany; */
+    /* display: inline-block; */
+    /* display: flex; */
+    /* animation-direction: alternate; */
+    -webkit-animation: rightThenLeft 4s linear infinite;
+  }
+
+  @keyframes rightThenLeft {
+    0% {
+      transform: translateX(-10px);
     }
-    to {
-      transform: translateX(calc(100% + 100px));
+    100% {
+      transform: translateX(calc(100% + 10px));
     }
   }
 </style>
