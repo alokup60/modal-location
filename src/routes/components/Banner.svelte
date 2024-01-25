@@ -14,8 +14,10 @@
   export let allCities = [];
 
   //store in an array and insert into an new array
-  for (let key in Cities) {
-    allCities.push(Cities[key]);
+  $: {
+    for (let key in Cities) {
+      allCities = new Set([...allCities, Cities[key]]);
+    }
   }
 </script>
 
