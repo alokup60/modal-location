@@ -18,7 +18,7 @@
     // console.log(Cities[key]);
     allCities.push(Cities[key]);
   }
-  console.log(allCities);
+  // console.log(allCities);
 </script>
 
 <svelte:head>

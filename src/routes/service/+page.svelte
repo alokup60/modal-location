@@ -1,32 +1,22 @@
 <script>
   import { cities } from "$lib/data/cities.js";
 
-  let allCities = [];
-  // console.log("hiii");
-  // Store in an array and insert into a new array
-  for (let key in cities) {
-    allCities.push(cities[key]);
-    // console.log(cities[key], "hii");
-  }
-  console.log(allCities);
-  // let delhi = cities.delhi;
-  // let bang = cities.banglore;
-  // let mumbai = cities.mumbai;
-  // let noida = cities.noida;
-  // let gNoida = cities.gNoida;
-  // let faridabad = cities.faridabad;
-  // let gurgaon = cities.gurgaon;
-  // //   console.log(delhi);
+  let delhi = cities.delhi;
+  let bang = cities.banglore;
+  let mumbai = cities.mumbai;
+  let noida = cities.noida;
+  let gNoida = cities.gNoida;
+  let faridabad = cities.faridabad;
+  let gurgaon = cities.gurgaon;
+  //   console.log(delhi);
 
-  // let Cities = [delhi, bang, mumbai, noida, gNoida, faridabad, gurgaon];
-  // let allCities = [];
+  let Cities = [delhi, bang, mumbai, noida, gNoida, faridabad, gurgaon];
+  let allCities = [];
 
   //store in an array and insert into an new array
-  // for (let key in Cities) {
-  //   console.log(Cities[key]);
-  //   allCities.push(Cities[key]);
-  // }
-  // console.log(allCities);
+  for (let key in Cities) {
+    allCities.push(Cities[key]);
+  }
 </script>
 
 <section>
@@ -75,11 +65,11 @@
   }
 
   @keyframes moveCompany {
-    0% {
-      transform: translateX(0);
+    from {
+      transform: translateX(-100px);
     }
-    100% {
-      transform: translateX(100%);
+    to {
+      transform: translateX(calc(100% + 100px));
     }
   }
 </style>
