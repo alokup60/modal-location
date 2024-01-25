@@ -3,13 +3,22 @@
 
   let delhi = cities.delhi;
   let bang = cities.banglore;
-
   let mumbai = cities.mumbai;
-
   let noida = cities.noida;
   let gNoida = cities.gNoida;
   let faridabad = cities.faridabad;
   let gurgaon = cities.gurgaon;
+  //   console.log(delhi);
+
+  let Cities = [delhi, bang, mumbai, noida, gNoida, faridabad, gurgaon];
+  let allCities = [];
+
+  //store in an array and insert into an new array
+  for (let key in Cities) {
+    // console.log(Cities[key]);
+    allCities.push(Cities[key]);
+  }
+  console.log(allCities);
 </script>
 
 <svelte:head>
@@ -34,138 +43,22 @@
     </div>
 
     <div class="flex items-center gap-6 py-4 mx-auto flex-wrap w-10/12">
-      <div
-        class="border rounded-xl py-2 w-3/12 flex flex-col items-center mx-auto relative cursor-pointer hover:shadow-md hover-container hover-effect hover:shadow-green-100 hover:text-green-400"
-      >
+      {#each allCities as { id, cityName, svg }, index (id)}
         <div
-          class="bg-white absolute -top-2 w-[80%] left-11 flex justify-center hover-effect svg-container z-20"
+          class="border rounded-xl py-6 w-3/12 flex flex-col gap-4 items-center mx-auto relative cursor-pointer hover:shadow-md hover-container hover-effect hover:shadow-green-100 hover:text-green-400"
         >
-          <img
-            src={bang.svg}
-            alt={bang.cityName}
-            class="absolute left-6 z-10"
-            width="110px"
-            height="72px"
-          />
+          <div
+            class="bg-white absolute -top-2 w-[80%] flex justify-center hover-effect svg-container z-20"
+          >
+            <img src={svg} alt={cityName} width="110px" height="72px" />
+          </div>
+          <p
+            class="font-semibold tracking-wider absolute bottom-0 flex justify-center items-center mx-auto flex-wrap"
+          >
+            {cityName}
+          </p>
         </div>
-        <p class="font-semibold tracking-wider absolute bottom-2">
-          {bang.cityName}
-        </p>
-      </div>
-
-      <div
-        class="border rounded-xl py-2 w-3/12 flex flex-col items-center mx-auto relative cursor-pointer hover:shadow-md hover-container hover-effect hover:shadow-green-100 hover:text-green-400"
-      >
-        <div
-          class="bg-white absolute -top-2 w-[80%] left-11 flex justify-center hover-effect svg-container z-20"
-        >
-          <img
-            src={mumbai.svg}
-            alt={mumbai.cityName}
-            class="absolute left-0 z-10"
-            width="100px"
-            height="72px"
-          />
-        </div>
-        <p class="font-semibold tracking-wider absolute bottom-2">
-          {mumbai.cityName}
-        </p>
-      </div>
-
-      <div
-        class="border rounded-xl py-2 w-3/12 flex flex-col items-center mx-auto relative cursor-pointer hover:shadow-md hover-container hover-effect hover:shadow-green-100 hover:text-green-400"
-      >
-        <div
-          class="bg-white absolute -top-2 w-[80%] left-11 flex justify-center hover-effect svg-container z-20"
-        >
-          <img
-            src={gurgaon.svg}
-            alt={gurgaon.cityName}
-            class="absolute left-4 right-0 z-10"
-            width="110px"
-            height="72px"
-          />
-        </div>
-        <p class="font-semibold tracking-wider absolute bottom-2">
-          {gurgaon.cityName}
-        </p>
-      </div>
-
-      <div
-        class="border rounded-xl py-2 w-3/12 flex flex-col items-center mx-auto relative cursor-pointer hover:shadow-md hover-container hover-effect hover:shadow-green-100 hover:text-green-400"
-      >
-        <div
-          class="bg-white absolute -top-2 w-[80%] left-11 flex justify-center hover-effect svg-container z-20"
-        >
-          <img
-            src={delhi.svg}
-            alt={delhi.cityName}
-            class="absolute left-6 right-0 z-10"
-            width="110px"
-            height="72px"
-          />
-        </div>
-        <p class="font-semibold tracking-wider absolute bottom-2">
-          {delhi.cityName}
-        </p>
-      </div>
-
-      <div
-        class="border rounded-xl py-2 w-3/12 flex flex-col items-center mx-auto relative cursor-pointer hover:shadow-md hover-container hover-effect hover:shadow-green-100 hover:text-green-400"
-      >
-        <div
-          class="bg-white absolute -top-2 w-[80%] left-11 flex justify-center hover-effect svg-container z-20"
-        >
-          <img
-            src={noida.svg}
-            alt={noida.cityName}
-            class="absolute left-0 z-10"
-            width="110px"
-            height="72px"
-          />
-        </div>
-        <p class="font-semibold tracking-wider absolute bottom-2">
-          {noida.cityName}
-        </p>
-      </div>
-
-      <div
-        class="border rounded-xl py-2 w-3/12 flex flex-col items-center mx-auto relative cursor-pointer hover:shadow-md hover-container hover-effect hover:shadow-green-100 hover:text-green-400"
-      >
-        <div
-          class="bg-white absolute -top-2 w-[80%] left-11 flex justify-center hover-effect svg-container z-20"
-        >
-          <img
-            src={gNoida.svg}
-            alt={gNoida.cityName}
-            class="absolute left-2 z-10"
-            width="80px"
-            height="46px"
-          />
-        </div>
-        <p class="font-semibold tracking-wider absolute bottom-2">
-          {gNoida.cityName}
-        </p>
-      </div>
-
-      <div
-        class="border rounded-xl py-2 w-3/12 flex flex-col items-center mx-auto relative cursor-pointer hover:shadow-md hover-container hover-effect hover:shadow-green-100 hover:text-green-400"
-      >
-        <div
-          class="bg-white absolute -top-2 w-[80%] left-11 flex justify-center hover-effect svg-container z-20"
-        >
-          <img
-            src={faridabad.svg}
-            alt={faridabad.cityName}
-            class="absolute left-0 z-10"
-            width="110px"
-            height="72px"
-          />
-        </div>
-        <p class="font-semibold tracking-wider absolute bottom-2">
-          {faridabad.cityName}
-        </p>
-      </div>
+      {/each}
     </div>
   </div>
 </section>
@@ -181,7 +74,7 @@
   } */
 
   .hover-container:hover .hover-effect img {
-    /* transform-origin: center bottom; */
+    transform-origin: center bottom;
     transform: scale(1.2);
     transition: transform 0.5s ease-in-out;
   }
