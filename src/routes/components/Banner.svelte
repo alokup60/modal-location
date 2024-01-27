@@ -1,23 +1,42 @@
 <script>
   import { cities } from "$lib/data/cities.js";
 
-  let delhi = cities.delhi;
-  let bang = cities.banglore;
-  let mumbai = cities.mumbai;
-  let noida = cities.noida;
-  let gNoida = cities.gNoida;
-  let faridabad = cities.faridabad;
-  let gurgaon = cities.gurgaon;
-  //   console.log(delhi);
+  //-------This is work when we have not all data of cities and we wan't specific city data then we'll use this
+  // let delhi = cities.delhi;
+  // let bang = cities.banglore;
+  // let mumbai = cities.mumbai;
+  // let noida = cities.noida;
+  // let gNoida = cities.gNoida;
+  // let faridabad = cities.faridabad;
+  // let gurgaon = cities.gurgaon;
+  // let jaipur = cities.jaipur;
+  // let chandigarh = cities.chandigarh;
+  // let lucknow = cities.lucknow;
+  // let pune = cities.pune;
+  // let ghaziabad = cities.ghaziabad;
+  // let dehradun = cities.dehradun;
 
-  let Cities = [delhi, bang, mumbai, noida, gNoida, faridabad, gurgaon];
+  // let Cities = [
+  //   delhi,
+  //   bang,
+  //   mumbai,
+  //   noida,
+  //   gNoida,
+  //   faridabad,
+  //   gurgaon,
+  //   jaipur,
+  //   chandigarh,
+  //   lucknow,
+  //   pune,
+  //   ghaziabad,
+  //   dehradun,
+  // ];
   export let allCities = [];
 
   //store in an array and insert into an new array
-  $: {
-    for (let key in Cities) {
-      allCities = new Set([...allCities, Cities[key]]);
-    }
+
+  for (let key in cities) {
+    allCities = new Set([...allCities, cities[key]]);
   }
 </script>
 

@@ -1,22 +1,43 @@
 <script>
   import { cities } from "$lib/data/cities.js";
 
-  let delhi = cities.delhi;
-  let bang = cities.banglore;
-  let mumbai = cities.mumbai;
-  let noida = cities.noida;
-  let gNoida = cities.gNoida;
-  let faridabad = cities.faridabad;
-  let gurgaon = cities.gurgaon;
+  // let delhi = cities.delhi;
+  // let bang = cities.banglore;
+  // let mumbai = cities.mumbai;
+  // let noida = cities.noida;
+  // let gNoida = cities.gNoida;
+  // let faridabad = cities.faridabad;
+  // let gurgaon = cities.gurgaon;
+  // let jaipur = cities.jaipur;
+  // let chandigarh = cities.chandigarh;
+  // let lucknow = cities.lucknow;
+  // let pune = cities.pune;
+  // let ghaziabad = cities.ghaziabad;
+  // let dehradun = cities.dehradun;
   //   console.log(delhi);
 
-  let Cities = [delhi, bang, mumbai, noida, gNoida, faridabad, gurgaon];
+  // let Cities = [
+  //   delhi,
+  //   bang,
+  //   mumbai,
+  //   noida,
+  //   gNoida,
+  //   faridabad,
+  //   gurgaon,
+  //   jaipur,
+  //   chandigarh,
+  //   lucknow,
+  //   pune,
+  //   ghaziabad,
+  //   dehradun,
+  // ];
+
   let allCities = [];
 
   //store in an array and insert into an new array
-  for (let key in Cities) {
+  for (let key in cities) {
     // console.log(Cities[key]);
-    allCities.push(Cities[key]);
+    allCities.push(cities[key]);
   }
   // console.log(allCities);
 </script>

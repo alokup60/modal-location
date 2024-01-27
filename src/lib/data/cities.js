@@ -39,31 +39,31 @@ export let cities = {
   jaipur: {
     id: uuidv4(),
     cityName: "Jaipur",
-    svg: ``,
+    svg: "/svg/jaipur.svg",
   },
   chandigarh: {
     id: uuidv4(),
     cityName: "Chandigarh",
-    svg: ``,
+    svg: "/svg/chandi.svg",
   },
   lucknow: {
     id: uuidv4(),
     cityName: "Lucknow",
-    svg: ``,
+    svg: "/svg/luck.svg",
   },
   ghaziabad: {
     id: uuidv4(),
     cityName: "Ghaziabad",
-    svg: ``,
+    svg: "/svg/farida.svg",
   },
   pune: {
     id: uuidv4(),
     cityName: "Pune",
-    svg: ``,
+    svg: "/svg/pune.svg",
   },
   dehradun: {
     id: uuidv4(),
     cityName: "Dehradun",
-    svg: ``,
+    svg: "/svg/dehradun.svg",
   },
 };
