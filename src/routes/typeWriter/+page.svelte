@@ -17,7 +17,7 @@
 
 <style>
   .text-box {
-    font-size: 70px;
+    font-size: 48px;
     font-weight: 900;
     text-align: center;
     width: 100%;
@@ -29,7 +29,7 @@
   }
   .dynamic-text {
     display: inline-block;
-    height: 105px;
+    height: 72px;
     overflow: hidden;
   }
   .dynamic-text div {
@@ -51,7 +51,6 @@
     left: 0;
     bottom: 0;
     height: 100%;
-
     right: -2px;
     background-color: #ffff;
     animation: 3s textType;
@@ -77,10 +76,10 @@
       margin-top: 0;
     }
     33.333% {
-      margin-top: -105px;
+      margin-top: -72px;
     }
     66.666% {
-      margin-top: -210px;
+      margin-top: -144px;
     }
     100% {
       margin-top: 0;
