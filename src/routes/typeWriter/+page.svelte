@@ -2,7 +2,7 @@
   let arr = ["Morgage", "Confirmation", "Sanctioned"];
 </script>
 
-<section class="bg-[#009090]">
+<section class="bg-[#ffff]">
   <!-- {#each arr as arr, index (index)}
     <h1>{arr}</h1>
   {/each} -->
@@ -94,7 +94,7 @@
   }
   .static-text {
     display: inline-block;
-    color: wheat;
+    color: #2b6442;
     vertical-align: top;
   }
   .dynamic-text {
@@ -110,7 +110,7 @@
   }
   .dynamic-text span {
     position: relative;
-    color: #02095a;
+    color: #f97f7f;
     display: block;
     text-align: left;
   }
@@ -122,7 +122,7 @@
     height: 100%;
 
     right: -2px;
-    background-color: #009090;
+    background-color: #ffff;
     animation: 3s textType;
     animation-iteration-count: infinite;
     animation-timing-function: steps(12);
