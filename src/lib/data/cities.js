@@ -11,11 +11,11 @@ export let cities = {
     cityName: "New Delhi",
     svg: "svg/del.svg",
   },
-  noida: {
-    id: uuidv4(),
-    cityName: "Noida",
-    svg: "svg/noida.svg",
-  },
+  // noida: {
+  //   id: uuidv4(),
+  //   cityName: "Noida",
+  //   svg: "svg/noida.svg",
+  // },
   gNoida: {
     id: uuidv4(),
     cityName: "Greater Noida",
@@ -36,11 +36,11 @@ export let cities = {
     cityName: "Banglore",
     svg: "/svg/bang.svg",
   },
-  jaipur: {
-    id: uuidv4(),
-    cityName: "Jaipur",
-    svg: "/svg/jaipur.svg",
-  },
+  // jaipur: {
+  //   id: uuidv4(),
+  //   cityName: "Jaipur",
+  //   svg: "/svg/jaipur.svg",
+  // },
   chandigarh: {
     id: uuidv4(),
     cityName: "Chandigarh",
@@ -56,11 +56,11 @@ export let cities = {
     cityName: "Ghaziabad",
     svg: "/svg/farida.svg",
   },
-  pune: {
-    id: uuidv4(),
-    cityName: "Pune",
-    svg: "/svg/pune.svg",
-  },
+  // pune: {
+  //   id: uuidv4(),
+  //   cityName: "Pune",
+  //   svg: "/svg/pune.svg",
+  // },
   dehradun: {
     id: uuidv4(),
     cityName: "Dehradun",

@@ -20,6 +20,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"gsap": "^3.12.5",
 		"uuidv4": "^6.2.13"
 	}
 }
