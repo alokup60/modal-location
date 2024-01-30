@@ -33,8 +33,8 @@ export const actions = {
     };
     let newEmi = calculateEMI(loanAmt, rate, tenure / 12).toFixed(2);
 
-    let totalAmt = newEmi * tenure;
-    let totalInterest = totalAmt - loanAmt;
+    let totalAmt = (newEmi * tenure).toFixed(2);
+    let totalInterest = (totalAmt - loanAmt).toFixed(2);
 
     return {
       loanAmt: loanAmt,
