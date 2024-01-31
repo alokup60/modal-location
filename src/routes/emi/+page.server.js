@@ -37,15 +37,11 @@ export const actions = {
     const loanAmt = data.get("loanAmount");
     const rate = data.get("rateOfInterest");
     const tenure = data.get("tenure");
-    // const month = data.get("month");
-    // const year = data.get("year");
 
     return {
       loanAmt: loanAmt,
       rate: rate,
       tenure: tenure,
-      //   month: month,
-      //   year: year,
       sucess: true,
     };
   },
@@ -82,24 +78,14 @@ export const actions = {
 
         openingBalance = closingBalance;
       }
-      console.log(emi);
 
       return { monthlyChart, emi };
     }
 
     let newEmi = calculateEMI(loanAmt, rate, tenure);
-    // console.log(newEmi);
     let monthlyEmi = newEmi.emi;
-
-    console.log(tenure, "months");
-    console.log(typeof tenure);
-    // let principal = newEmi.principal;
-    console.log(loanAmt, "principal");
-    console.log(typeof loanAmt);
     let totalAmt = Number(monthlyEmi * tenure).toFixed(2);
-    // console.log(totalAmt, "ttlAmt");
     let totalInterest = Number(totalAmt - loanAmt).toFixed(2);
-    // console.log(totalInterest, "total Interest");
 
     return {
       loanAmt: loanAmt,
@@ -108,8 +94,6 @@ export const actions = {
       newEmi,
       totalAmt,
       totalInterest,
-      // totAmt: JSON.stringify(totalAmt),
-      // totInt: JSON.stringify(totalInterest),
       success: true,
     };
   },

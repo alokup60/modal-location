@@ -1,6 +1,6 @@
 <script>
   export let form;
-  console.log(form);
+  // console.log(form);
 </script>
 
 <section class="w-full flex justify-center mx-auto items-center mt-[2rem]">
