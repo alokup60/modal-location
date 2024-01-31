@@ -1,13 +1,16 @@
 <script>
-  export let action;
+  // export let actions;
+  export let da;
+  export let mo;
+  let allYr = JSON.parse(da);
+  let allMon = JSON.parse(mo);
+  export let actions;
+  // console.log(allMon, "comp");
+  // console.log(da);
 </script>
 
 <section class="w-full flex justify-center mx-auto items-center">
-  <form
-    method="post"
-    action="/emi?/inputData"
-    class="w-full flex justify-center mx-auto"
-  >
+  <form method="post" class="w-full flex justify-center mx-auto">
     <div class="container w-4/12 flex items-center flex-col gap-4">
       <h2 class="font-semibold text-xl">EMI Calculator</h2>
       <div class="loanAmount flex justify-between mx-auto w-full items-center">
@@ -44,8 +47,20 @@
           class="px-2 py-1 rounded-md outline-none w-8/12 border"
         />
       </div>
+      <!-- <div class="tenure flex justify-between mx-auto w-full items-center">
+        <label for="year" class="font-semibold text-md">Year</label>
+        <select name="month" class="outline-none border rounded-md px-2 py-1">
+          {#each allMon as mon, index}
+            <option value="mon">{mon}</option>
+          {/each}
+        </select>
+        <select name="year" class="outline-none border rounded-md px-2 py-1">
+          {#each allYr as yr, index}
+            <option value="yr">{yr}</option>
+          {/each}
+        </select>
+      </div> -->
       <button
-        formaction="/emi?/calculateEmi"
         class="bg-green-400 px-4 py-2 rounded-md text-white font-semibold hover:bg-green-500"
         >Calculate</button
       >
