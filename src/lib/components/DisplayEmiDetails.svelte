@@ -1,6 +1,8 @@
 <script>
   export let form;
-  console.log(form);
+  export let chart;
+  console.log(chart, "chartDetails");
+  console.log(form, "details");
 </script>
 
 <section class="w-full flex justify-center mx-auto items-center mt-[2rem]">

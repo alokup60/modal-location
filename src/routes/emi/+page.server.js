@@ -1,4 +1,12 @@
 export async function load() {
+  let frequencies = [
+    "Quarterly",
+    "HalfYeary",
+    "Annually",
+    "Biannual",
+    "Lump sum",
+  ];
+
   let months = [
     "January",
     "February",
@@ -29,28 +37,14 @@ export async function load() {
   //function for generating years
   let allYear = JSON.stringify(generateYears());
 
-  return { allMonths: JSON.stringify(months), allYear };
+  return {
+    allMonths: JSON.stringify(months),
+    allYear,
+    frequencies: JSON.stringify(frequencies),
+  };
 }
 
 export const actions = {
-  inputData: async ({ request }) => {
-    const data = await request.formData();
-    const loanAmt = data.get("loanAmount");
-    const rate = data.get("rateOfInterest");
-    const tenure = data.get("tenure");
-    const month = data.get("month");
-    const year = data.get("year");
-
-    return {
-      loanAmt: loanAmt,
-      rate: rate,
-      tenure: tenure,
-      month,
-      year,
-      sucess: true,
-    };
-  },
-
   calculateEmi: async ({ request }) => {
     const data = await request.formData();
     const loanAmt = data.get("loanAmount");
@@ -58,7 +52,13 @@ export const actions = {
     const tenure = data.get("tenure");
     const month = data.get("month");
     const year = data.get("year");
+    const partPayment = data.get("partPayment");
+    const freq = data.get("freq");
+    const partMonth = data.get("partMonth");
+    const partYear = data.get("partYear");
+    console.log(partPayment, freq, partMonth, partYear);
 
+    // let partPayment = 0;
     function calculateEMI(principal, interestRate, tenureMonths) {
       const monthlyInterestRate = interestRate / 100 / 12;
       const emi =
@@ -66,6 +66,10 @@ export const actions = {
         (1 - Math.pow(1 + monthlyInterestRate, -tenureMonths));
 
       let monthlyChart = [];
+
+      $: {
+        monthlyChart;
+      }
 
       let openingBalance = principal;
 
@@ -81,11 +85,13 @@ export const actions = {
           interest: interest.toFixed(2),
           interestRate: interestRate,
           emi: emi.toFixed(2),
+          partPayment,
           closingBalance: closingBalance.toFixed(2),
         });
 
         openingBalance = closingBalance;
       }
+      console.log(monthlyChart);
 
       return { monthlyChart, emi };
     }
@@ -104,7 +110,27 @@ export const actions = {
       totalInterest,
       month: month,
       year: year,
-      success: true,
+      partPayment,
+      freq,
+      partMonth,
+      partYear,
+      calculateEmi: true,
     };
   },
+
+  // partPayment: async ({ request }) => {
+  //   const data = await request.formData();
+  //   const partPayment = data.get("partPayment");
+  //   const freq = data.get("freq");
+  //   const month = data.get("month");
+  //   const year = data.get("year");
+  //   console.log(partPayment, freq, month, year);
+
+  //   // const findIndex = () => {};
+  //   let partPayArr = [partPayment, freq, month, year];
+  //   console.log(monthlyChart, "part");
+  //   return {
+  //     partPayArr,
+  //   };
+  // },
 };
