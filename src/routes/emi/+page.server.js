@@ -26,6 +26,7 @@ export async function load() {
 
     return years;
   };
+  //function for generating years
   let allYear = JSON.stringify(generateYears());
 
   return { allMonths: JSON.stringify(months), allYear };
@@ -37,11 +38,15 @@ export const actions = {
     const loanAmt = data.get("loanAmount");
     const rate = data.get("rateOfInterest");
     const tenure = data.get("tenure");
+    const month = data.get("month");
+    const year = data.get("year");
 
     return {
       loanAmt: loanAmt,
       rate: rate,
       tenure: tenure,
+      month,
+      year,
       sucess: true,
     };
   },
@@ -51,6 +56,9 @@ export const actions = {
     const loanAmt = data.get("loanAmount");
     const rate = data.get("rateOfInterest");
     const tenure = data.get("tenure");
+    const month = data.get("month");
+    const year = data.get("year");
+
     function calculateEMI(principal, interestRate, tenureMonths) {
       const monthlyInterestRate = interestRate / 100 / 12;
       const emi =
@@ -94,6 +102,8 @@ export const actions = {
       newEmi,
       totalAmt,
       totalInterest,
+      month: month,
+      year: year,
       success: true,
     };
   },

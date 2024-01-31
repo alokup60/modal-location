@@ -1,6 +1,6 @@
 <script>
   export let form;
-  // console.log(form);
+  console.log(form);
 </script>
 
 <section class="w-full flex justify-center mx-auto items-center mt-[2rem]">
@@ -25,14 +25,12 @@
         <p>
           <i class="fa-solid fa-indian-rupee-sign"></i>
           {form?.totalInterest}
-          <!-- {JSON.parse(form?.totalInterest)} -->
         </p>
       </div>
       <div class="flex w-full justify-between">
         <span class="font-semibold text-md">Total Amount:</span>
         <p>
           <i class="fa-solid fa-indian-rupee-sign"></i>
-          <!-- {JSON.parse(form?.totalAmt)} -->
           {form?.totalAmt}
         </p>
       </div>

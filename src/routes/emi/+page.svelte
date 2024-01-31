@@ -4,13 +4,13 @@
   import MonthChart from "../components/MonthChart.svelte";
   export let form;
   export let data;
-  //   export let actions;
-  //   console.log(data?.allMonths);
-  //   console.log(data?.allYear);
-  //   console.log(form?.allYear);
 </script>
 
-<EmiCalc da={data?.allYear} mo={data?.allMonths} actions="?/calculateEmi" />
+<EmiCalc
+  year={data?.allYear}
+  month={data?.allMonths}
+  actions="?/calculateEmi"
+/>
 
 <DisplayEmiDetails {form} />
 

@@ -1,12 +1,9 @@
 <script>
-  // export let actions;
-  export let da;
-  export let mo;
-  let allYr = JSON.parse(da);
-  let allMon = JSON.parse(mo);
+  //coming from main page [da,mo is a props]
+  export let year;
+  export let month;
+
   export let actions;
-  // console.log(allMon, "comp");
-  // console.log(da);
 </script>
 
 <section class="w-full flex justify-center mx-auto items-center">
@@ -47,19 +44,19 @@
           class="px-2 py-1 rounded-md outline-none w-8/12 border"
         />
       </div>
-      <!-- <div class="tenure flex justify-between mx-auto w-full items-center">
+      <div class="tenure flex justify-between mx-auto w-full items-center">
         <label for="year" class="font-semibold text-md">Year</label>
         <select name="month" class="outline-none border rounded-md px-2 py-1">
-          {#each allMon as mon, index}
-            <option value="mon">{mon}</option>
+          {#each month as mon, index}
+            <option value={mon}>{mon}</option>
           {/each}
         </select>
         <select name="year" class="outline-none border rounded-md px-2 py-1">
-          {#each allYr as yr, index}
-            <option value="yr">{yr}</option>
+          {#each year as yr, index}
+            <option value={yr}>{yr}</option>
           {/each}
         </select>
-      </div> -->
+      </div>
       <button
         class="bg-green-400 px-4 py-2 rounded-md text-white font-semibold hover:bg-green-500"
         >Calculate</button
