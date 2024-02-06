@@ -61,7 +61,7 @@ export const actions = {
     // let partPayment = 0;
     function calculateEMI(principal, interestRate, tenureMonths) {
       const monthlyInterestRate = interestRate / 100 / 12;
-      const emi =
+      let emi =
         (principal * monthlyInterestRate) /
         (1 - Math.pow(1 + monthlyInterestRate, -tenureMonths));
 
@@ -76,8 +76,19 @@ export const actions = {
       for (let i = 1; i <= tenureMonths; i++) {
         const interest = openingBalance * monthlyInterestRate;
         const principalPaid = emi - interest;
-        const closingBalance = openingBalance - principalPaid;
+        let closingBalance = openingBalance - principalPaid;
 
+        if (closingBalance <= 1) {
+          break;
+        } else if (closingBalance < emi) {
+          emi = interest + closingBalance;
+          closingBalance = 0;
+        }
+
+        // if (freq == "Quarterly") {
+        //   let value = 3;
+        //   return value;
+        // }
         monthlyChart.push({
           month: i,
           openingBalance: Number(openingBalance).toFixed(2),
@@ -89,7 +100,7 @@ export const actions = {
           closingBalance: closingBalance.toFixed(2),
         });
 
-        openingBalance = closingBalance;
+        openingBalance = closingBalance - partPayment;
       }
       // console.log(monthlyChart, "server");
 

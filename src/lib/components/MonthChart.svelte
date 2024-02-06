@@ -30,13 +30,23 @@
       {#each chart as item}
         <tr class="text-center">
           <td>{item.month}</td>
-          <td>{item.openingBalance}</td>
+          <!-- <td>{item.openingBalance}</td> -->
+
+          <!-- {#if item.month == 1}
+            <td>{item.openingBalance}</td>
+          {:else}
+            {#each item as it}
+              <td>{it.openingBalance - it.partPayment}</td>
+            {/each} -->
+          <!-- <td>{newOpenBal}</td> -->
+          <!-- {/if} -->
 
           <!-- {#if item.partPayment}
             <td>{newOpenBal}</td>
           {:else}
-            <td>{item.openingBalance}</td>
           {/if} -->
+          <td>{item.openingBalance}</td>
+
           <td>{item.interest}</td>
           <td>{item.principal}</td>
           <td>{item.closingBalance}</td>

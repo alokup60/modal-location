@@ -5,7 +5,7 @@
   // export let chart;
   export let freq;
   let allFreq = JSON.parse(freq);
-
+  // console.log(allFreq);
   let allYear = JSON.parse(year);
   let allMonths = JSON.parse(month);
   // export let actions;
