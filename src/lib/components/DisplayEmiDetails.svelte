@@ -1,13 +1,13 @@
 <script>
   export let form;
-  export let chart;
-  console.log(chart, "chartDetails");
-  console.log(form, "details");
+  // export let chart;
+  // console.log(chart, "chartDetails");
+  // console.log(form, "details");
 </script>
 
 <section class="w-full flex justify-center mx-auto items-center mt-[2rem]">
   <div class="w-4/12 flex flex-col gap-2">
-    {#if form?.success}
+    {#if form}
       <div class="flex w-full justify-between">
         <span class="font-semibold text-md">Monthly EMI:</span>
         <p>

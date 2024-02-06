@@ -91,7 +91,7 @@ export const actions = {
 
         openingBalance = closingBalance;
       }
-      console.log(monthlyChart);
+      // console.log(monthlyChart, "server");
 
       return { monthlyChart, emi };
     }

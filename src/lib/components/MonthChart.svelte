@@ -1,18 +1,24 @@
 <script>
   import { monthlyChart } from "$lib/stores/monthlychartstore";
   export let chart;
+  export let form;
 
-  // export let form;
-  // let allData;
-  // if (form) {
-  //   allData = form?.newEmi.monthlyChart;
-  // }
+  console.log(chart, "monthlyChart");
+
+  // let partPay;
+  // let opBal;
+  // chart.map((item) => {
+  //   partPay = item.partPayment;
+  //   opBal = item.openingBalance;
+  // });
+  // let newOpenBal = opBal - partPay;
 </script>
 
 <section class="w-full flex justify-center mx-auto items-center mt-[2rem]">
   {#if chart}
     <table class="w-10/12">
       <tr>
+        <th>Year</th>
         <th>OpeningBal</th>
         <th>Interest</th>
         <th>Principal</th>
@@ -23,7 +29,14 @@
 
       {#each chart as item}
         <tr class="text-center">
+          <td>{item.month}</td>
           <td>{item.openingBalance}</td>
+
+          <!-- {#if item.partPayment}
+            <td>{newOpenBal}</td>
+          {:else}
+            <td>{item.openingBalance}</td>
+          {/if} -->
           <td>{item.interest}</td>
           <td>{item.principal}</td>
           <td>{item.closingBalance}</td>

@@ -13,7 +13,7 @@
     // $monthlyChart = form.newEmi.monthlyChart;
     // console.log($monthlyChart);
     chart = form?.newEmi.monthlyChart;
-    console.log(chart, "chart");
+    // console.log(chart, "chart");
   }
 
   export const snapshot = {
