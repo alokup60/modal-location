@@ -9,9 +9,6 @@
   export let form;
 
   let chart;
-  seoData.map((item) => {
-    console.log(item);
-  });
 
   // let allData = form?.newEmi.monthlyChart;
   // console.log(form);
@@ -27,6 +24,7 @@
     restore: (value) => (chart = value),
   };
   export let data;
+  // console.log(data);
 </script>
 
 <EmiCalc
@@ -34,7 +32,7 @@
   month={data?.allMonths}
   freq={data?.frequencies}
 />
-<SeoList />
+<SeoList seoList={data?.seoData} />
 
 <!-- <PartialPayment
   year={data?.allYear}

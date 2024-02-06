@@ -21,6 +21,7 @@
 	"type": "module",
 	"dependencies": {
 		"gsap": "^3.12.5",
+		"mongodb": "^6.3.0",
 		"uuidv4": "^6.2.13"
 	}
 }

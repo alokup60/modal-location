@@ -1,4 +1,9 @@
+import { seoColl } from "$lib/db/database.js";
+
 export async function load() {
+  let seo = await seoColl.findOne({ name: "anshu" });
+  let seoData = JSON.stringify(seo.newdata);
+
   let frequencies = [
     { key: "Quarterly", value: 3 },
     { key: "HalfYearly", value: 6 },
@@ -34,10 +39,11 @@ export async function load() {
 
     return years;
   };
-  //function for generating years
+
   let allYear = JSON.stringify(generateYears());
 
   return {
+    seoData,
     allMonths: JSON.stringify(months),
     allYear,
     frequencies: JSON.stringify(frequencies),
@@ -154,20 +160,16 @@ export const actions = {
       calculateEmi: true,
     };
   },
-
-  // partPayment: async ({ request }) => {
-  //   const data = await request.formData();
-  //   const partPayment = data.get("partPayment");
-  //   const freq = data.get("freq");
-  //   const month = data.get("month");
-  //   const year = data.get("year");
-  //   console.log(partPayment, freq, month, year);
-
-  //   // const findIndex = () => {};
-  //   let partPayArr = [partPayment, freq, month, year];
-  //   console.log(monthlyChart, "part");
-  //   return {
-  //     partPayArr,
-  //   };
-  // },
+  addSeo: async ({ request }) => {
+    const data = await request.formData();
+    const seoName = data.get("seoName");
+    console.log(seoName);
+    let user = await seoColl.updateOne(
+      {
+        name: "anshu",
+      },
+      { $push: { newdata: seoName } }
+    );
+    return { success: true };
+  },
 };

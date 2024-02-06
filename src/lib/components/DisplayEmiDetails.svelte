@@ -11,8 +11,8 @@
       <div class="flex w-full justify-between">
         <span class="font-semibold text-md">Monthly EMI:</span>
         <p>
-          <i class="fa-solid fa-indian-rupee-sign"
-          ></i>{(form?.newEmi.emi).toFixed(2)}
+          <i class="fa-solid fa-indian-rupee-sign"></i>
+          <!-- {(form?.newEmi.emi).toFixed(2)} -->
         </p>
       </div>
 
