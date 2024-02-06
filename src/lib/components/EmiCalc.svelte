@@ -2,10 +2,13 @@
   //coming from main page [da,mo is a props]
   export let year;
   export let month;
-  // export let chart;
   export let freq;
+
   let allFreq = JSON.parse(freq);
-  // console.log(allFreq);
+
+  // allFreq.map((item) => {
+  //   console.log(item.value);
+  // });
   let allYear = JSON.parse(year);
   let allMonths = JSON.parse(month);
   // export let actions;
@@ -58,12 +61,12 @@
         <div>
           <select name="month" class="outline-none border rounded-md px-2 py-1">
             {#each allMonths as mon, index}
-              <option value={mon}>{mon}</option>
+              <option value={index + 1}>{mon}</option>
             {/each}
           </select>
           <select name="year" class="outline-none border rounded-md px-2 py-1">
             {#each allYear as yr, index}
-              <option value={yr}>{yr}</option>
+              <option value={index}>{yr}</option>
             {/each}
           </select>
         </div>
@@ -80,7 +83,7 @@
             class="outline-none border rounded-md px-2 py-1"
           >
             {#each allMonths as mon, index}
-              <option value={mon}>{mon}</option>
+              <option value={index + 1}>{mon}</option>
             {/each}
           </select>
           <select
@@ -88,7 +91,7 @@
             class="outline-none border rounded-md px-2 py-1"
           >
             {#each allYear as yr, index}
-              <option value={yr}>{yr}</option>
+              <option value={index}>{yr}</option>
             {/each}
           </select>
         </div>
@@ -97,8 +100,8 @@
         <label for="year" class="font-semibold text-md">Frequencies</label>
         <div>
           <select name="freq" class="outline-none border rounded-md px-2 py-1">
-            {#each allFreq as freq, index}
-              <option value={freq}>{freq}</option>
+            {#each allFreq as freq}
+              <option value={freq.value}>{freq.key}</option>
             {/each}
           </select>
         </div>

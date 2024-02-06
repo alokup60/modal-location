@@ -51,6 +51,7 @@
           <td>{item.principal}</td>
           <td>{item.closingBalance}</td>
           <td>{item.emi}</td>
+
           {#if item.partPayment}
             <td>{item.partPayment}</td>
           {:else}

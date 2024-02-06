@@ -3,9 +3,15 @@
   import DisplayEmiDetails from "$lib/components/DisplayEmiDetails.svelte";
   import MonthChart from "$lib/components/MonthChart.svelte";
   import PartialPayment from "$lib/components/PartialPayment.svelte";
+  import Seo from "../../lib/components/Seo.svelte";
+  import SeoList from "../../lib/components/SeoList.svelte";
+  import { seoData } from "$lib/data/seo.js";
   export let form;
 
   let chart;
+  seoData.map((item) => {
+    console.log(item);
+  });
 
   // let allData = form?.newEmi.monthlyChart;
   // console.log(form);
@@ -28,6 +34,8 @@
   month={data?.allMonths}
   freq={data?.frequencies}
 />
+<SeoList />
+
 <!-- <PartialPayment
   year={data?.allYear}
   month={data?.allMonths}
@@ -37,3 +45,5 @@
 <DisplayEmiDetails {form} {chart} />
 
 <MonthChart {form} {chart} />
+
+<!-- <Seo title="EMi_CAl" description="This is desc" type="Web" /> -->

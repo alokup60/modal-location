@@ -1,10 +1,10 @@
 export async function load() {
   let frequencies = [
-    "Quarterly",
-    "HalfYeary",
-    "Annually",
-    "Biannual",
-    "Lump sum",
+    { key: "Quarterly", value: 3 },
+    { key: "HalfYearly", value: 6 },
+    { key: "Annually", value: 1 },
+    { key: "Biannual", value: 2 },
+    { key: "Lump sum", value: 1 },
   ];
 
   let months = [
@@ -50,15 +50,14 @@ export const actions = {
     const loanAmt = data.get("loanAmount");
     const rate = data.get("rateOfInterest");
     const tenure = data.get("tenure");
-    const month = data.get("month");
+    const month = parseInt(data.get("month"));
     const year = data.get("year");
-    const partPayment = data.get("partPayment");
-    const freq = data.get("freq");
-    const partMonth = data.get("partMonth");
+    let partPayment = data.get("partPayment");
+    let freq = data.get("freq");
+    const partMonth = parseInt(data.get("partMonth"));
     const partYear = data.get("partYear");
     console.log(partPayment, freq, partMonth, partYear);
 
-    // let partPayment = 0;
     function calculateEMI(principal, interestRate, tenureMonths) {
       const monthlyInterestRate = interestRate / 100 / 12;
       let emi =
@@ -72,11 +71,28 @@ export const actions = {
       }
 
       let openingBalance = principal;
+      // console.log(partPayment, "partpay");
+
+      // difference b/w month & year
+      let diffMonth = Math.abs(month - partMonth);
+      console.log(diffMonth, "diffM");
+      let diffYear = Math.abs(year - partYear);
+      console.log(diffYear, "diffY");
+
+      if ((freq = 3)) {
+        // partPayment = month + 3;
+        // partPayment = month / 4;
+        // partPayment = 0;
+        // partPayment = month + 3;
+      }
 
       for (let i = 1; i <= tenureMonths; i++) {
         const interest = openingBalance * monthlyInterestRate;
-        const principalPaid = emi - interest;
+        let principalPaid = emi - interest;
+        // principalPaid += partPayment;
         let closingBalance = openingBalance - principalPaid;
+
+        // console.log(principalPaid, "partpay");
 
         if (closingBalance <= 1) {
           break;
@@ -85,24 +101,34 @@ export const actions = {
           closingBalance = 0;
         }
 
+        // frequencies.map((item) => {
+        // if (freq.key == "Quarterly") {
+        //   partPayment = tenure / 4;
+        // }
+        // });
         // if (freq == "Quarterly") {
         //   let value = 3;
         //   return value;
         // }
+
+        // } else {
+        //   partPayment = 0;
+        // }
+
         monthlyChart.push({
           month: i,
           openingBalance: Number(openingBalance).toFixed(2),
-          principal: principalPaid.toFixed(2),
+          principal: Number(principalPaid).toFixed(2),
           interest: interest.toFixed(2),
           interestRate: interestRate,
           emi: emi.toFixed(2),
-          partPayment,
+          freq: Number(freq),
+          partPayment: partPayment,
           closingBalance: closingBalance.toFixed(2),
         });
 
         openingBalance = closingBalance - partPayment;
       }
-      // console.log(monthlyChart, "server");
 
       return { monthlyChart, emi };
     }
