@@ -172,4 +172,21 @@ export const actions = {
     );
     return { success: true };
   },
+  removeSeoList: async ({ request }) => {
+    const formData = await request.formData();
+    const removeSeos = formData.get("removeSeo");
+    const removeSeo = removeSeos?.toString();
+    let newSeo = removeSeo?.split(",");
+    console.log(newSeo);
+
+    let user = await seoColl.updateOne(
+      {
+        name: "anshu",
+      },
+      { $pullAll: { newdata: newSeo } }
+    );
+    return {
+      success: true,
+    };
+  },
 };

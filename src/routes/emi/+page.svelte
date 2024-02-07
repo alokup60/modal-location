@@ -27,11 +27,11 @@
   // console.log(data);
 </script>
 
-<EmiCalc
+<!-- <EmiCalc
   year={data?.allYear}
   month={data?.allMonths}
   freq={data?.frequencies}
-/>
+/> -->
 <SeoList seoList={data?.seoData} />
 
 <!-- <PartialPayment
@@ -40,8 +40,8 @@
   freq={data?.frequencies}
 /> -->
 
-<DisplayEmiDetails {form} {chart} />
+<!-- <DisplayEmiDetails {form} {chart} /> -->
 
-<MonthChart {form} {chart} />
+<!-- <MonthChart {form} {chart} /> -->
 
 <!-- <Seo title="EMi_CAl" description="This is desc" type="Web" /> -->
